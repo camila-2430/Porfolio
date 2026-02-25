@@ -202,3 +202,54 @@
   });
 
 })();
+
+
+
+emailjs.init("zh2Yvsp9fHQDE58Yu");
+
+let formulario = document.getElementById("contactForm");
+
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  emailjs.init("zh2Yvsp9fHQDE58Yu");
+
+  const formulario = document.getElementById("contactForm");
+
+  formulario.addEventListener("submit", async function (e) {
+
+    e.preventDefault();
+
+    try {
+
+      document.querySelector(".loading").style.display = "block";
+
+      await emailjs.sendForm(
+        "service_xfwu6qq",
+        "template_yuibljy",
+        this
+      );
+
+      document.querySelector(".loading").style.display = "none";
+      document.querySelector(".sent-message").style.display = "block";
+      document.querySelector(".error-message").style.display = "none";
+
+      formulario.reset();
+
+    } catch (error) {
+
+      document.querySelector(".loading").style.display = "none";
+      document.querySelector(".error-message").innerText = "Error al enviar";
+      document.querySelector(".error-message").style.display = "block";
+
+    }
+
+  });
+
+});
+
