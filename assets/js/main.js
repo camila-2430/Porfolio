@@ -205,14 +205,6 @@
 
 
 
-emailjs.init("zh2Yvsp9fHQDE58Yu");
-
-let formulario = document.getElementById("contactForm");
-
-formulario.addEventListener("submit", function (e) {
-  e.preventDefault();
-});
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
